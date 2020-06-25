@@ -15,7 +15,9 @@ Encore
     .addEntry('map' , './assets/js/map.js')
     .addEntry('customForm' , './assets/js/customForm.js')
     .addEntry('sb-admin','./assets/js/sb-admin-2.js')
-    .enableSassLoader()
+    .enableSassLoader(options =>{
+        options.implementation = require('sass')
+    })
     .copyFiles([
         {from: './node_modules/ckeditor/', to: 'ckeditor/[path][name].[ext]', pattern: /\.(js|css)$/, includeSubdirectories: false},
         {from: './node_modules/ckeditor/adapters', to: 'ckeditor/adapters/[path][name].[ext]'},
