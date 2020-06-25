@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}House{% endblock %}
+
+{% block body %}
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">{{ wo_render_breadcrumbs() }}</h1>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 text-center">
+                <h4><i>House Information</i></h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+                                <div class="card-header py-3 text-center" >
+                                    <h4>Basic Information</h4>
+                                </div>
+                                <hr>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card shadow mb-4">
+                            <div class="card-body">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+
+    <a href="{{ path('house_index') }}">back to list</a>
+
+    <a href="{{ path('house_edit', {'id': house.id}) }}">edit</a>
+
+    {{ include('house/_delete_form.html.twig') }}
+{% endblock %}

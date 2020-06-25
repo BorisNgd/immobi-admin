@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New House{% endblock %}
+
+{% block body %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">{{ wo_render_breadcrumbs() }}</h1>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 text-center">
+                <h4><i>Create new House</i></h4>
+            </div>
+
+            {{ include('house/_form.html.twig') }}
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+
+
+    <a href="{{ path('house_index') }}">back to list</a>
+
+{% endblock %}
+
+{% block customScripts %}
+    {{ encore_entry_script_tags('customForm') }}
+{% endblock %}
