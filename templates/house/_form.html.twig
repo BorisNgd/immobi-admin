@@ -1,5 +1,11 @@
 {{ form_start(form) }}
 
+<style>
+    img{
+        width: 200px;
+        height: 200px;
+    }
+</style>
 <div class="card-body">
 
     <div class="row">
@@ -226,7 +232,7 @@
                                                         <ul style="list-style:none;" class="image"
                                                             data-prototype="{{ form_widget(form.Attachments.vars.prototype)|e('html_attr') }}">
                                                             {% for attachment in form.Attachments %}
-                                                                <li>{{ form_row(attachment.imageFile) }}</li>
+                                                                <li>{{ form_row(attachment.imageFile , {'attr':{'class':'btn btn-primary'}}) }}</li>
                                                             {% endfor %}
                                                         </ul>
                                                     </div>
