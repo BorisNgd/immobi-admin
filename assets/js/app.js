@@ -14,8 +14,9 @@ window.$ = window.jQuery = require('jquery');
 require('jquery-ui');
 require('jquery-ui-bundle');
 
-import  'bootstrap';
+import 'bootstrap';
 require('datatables.net-bs4');
+import '@fortawesome/fontawesome-free/js/all';
 import 'bootstrap4-toggle/css/bootstrap4-toggle.min.css'
 import '../css/custom.css';
 
