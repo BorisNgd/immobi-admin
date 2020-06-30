@@ -55,7 +55,9 @@ function addPhotoFormDeleteLink($photoFormLink) {
     $photoFormLink.append($removeImageButton);
 
     $removeImageButton.on('click' , function (e) {
-        $photoFormLink.remove();
+        $(e.target).parents('li').slideUp(1000 , function () {
+            $photoFormLink.remove();
+        })
     });
 }
 
