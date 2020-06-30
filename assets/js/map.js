@@ -1,3 +1,3 @@
-$(document).ready(function() {
-    $('#dataTable').DataTable();
-} );
+import $ from 'jquery';
+
+$('.dataTable').DataTable();

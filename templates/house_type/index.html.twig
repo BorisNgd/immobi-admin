@@ -13,24 +13,25 @@
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <a id="editModal" data-toggle="modal" data-target="#modalStudent" class=" btn btn-primary mr-3"
-                   href="{{ path('house_type_new') }}">Créer une categorie</a>
+                <a class="btn btn-outline-primary rounded-pill mr-3"
+                   href="{{ path('house_type_new') }}">Add Category</a>
             </div>
+
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered"  id="dataTable" width="100%" cellspacing="0">
-                        <thead>
+                    <table class="table table-hover table-borderless text-center justify-content-center align-content-center nowrap dataTable" id="dataTable" style="width:100%;" cellspacing="0">
+                        <thead class="bg-primary text-white">
                         <tr>
                             <th>Categorie N</th>
                             <th>Nom Categorie</th>
-                            <th class="text-center" colspan="3">Actions</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
                             <th>Categorie N</th>
                             <th>Nom Categorie</th>
-                            <th colspan="3" class="text-center">Actions</th>
+                            <th>Actions</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -39,16 +40,17 @@
                                 <td>{{ category.id }}</td>
                                 <td>{{ category.name }}</td>
                                 <td class="text-center">
-                                    <a class="btn btn-info" href="{{ path('house_type_show', {'id': category.id} ) }}">
+                                    <a class="btn btn-outline-info rounded-circle disabled" href="{{ path('house_type_show', {'id': category.id} ) }}">
                                         <i class="fa fa-eye" aria-hidden="true"></i>
                                     </a>
-                                    <a class="btn btn-secondary" href="{{ path('house_type_edit', {'id': category.id}) }}">
+                                    <a class="btn btn-outline-secondary rounded-circle" href="{{ path('house_type_edit', {'id': category.id}) }}">
                                         <i class="fa fa-edit" aria-hidden="true"></i>
                                     </a>
-                                    <a class="btn btn-danger" href="" id="printCard" data-toggle="modal"
-                                       data-target="#modalCard">
-                                        <i class="fa fa-trash" aria-hidden="true"></i>
-                                    </a>
+                                    <form method="post" action="{{ path('house_type_delete' , {'id':category.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item ?')">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ category.id ) }}">
+                                        <button class="btn btn-outline-danger rounded-circle"><i class="fa fa-trash"></i></button>
+                                    </form>
                                 </td>
                             </tr>
 
@@ -68,5 +70,5 @@
 {% endblock %}
 
 {% block customScripts %}
-{{ encore_entry_script_tags('map') }}
+    {{ encore_entry_script_tags('map') }}
 {% endblock %}

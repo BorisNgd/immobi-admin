@@ -6,10 +6,12 @@ use App\Entity\User;
 use App\Form\UserType;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 /**
  * @Route("/admin/user")
@@ -40,13 +42,29 @@ class UserController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request , SluggerInterface $slugger): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $photoFile = $form->get('photo')->getData();
+
+            if ($photoFile){
+                $originalName = pathinfo($photoFile->getClientOriginalName() , PATHINFO_FILENAME);
+                $safeFileName = $slugger->slug($originalName);
+                $newFileName = $safeFileName.'_'.uniqid().'.'.$photoFile->guessExtension();
+
+                try{
+                    $photoFile->move(
+                        $this->getParameter('photos_directory'),
+                        $newFileName
+                    );
+                }catch (FileException $exception){
+
+                }
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $user->setPassword($this->passwordEncoder->encodePassword($user , $user->getPassword()));
             $entityManager->persist($user);

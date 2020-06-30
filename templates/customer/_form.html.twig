@@ -1,4 +1,130 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+<div class="card-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="card-header text-center bg-transparent">
+                        <h6>Basic Information</h6>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            {{ form_label(form.firstname) }}
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                </div>
+                                {{ form_widget(form.firstname , {'attr':{'class':''}}) }}
+                            </div>
+                            <small>{{ form_help(form.firstname) }}</small>
+
+                            <div class="form-error">
+                                {{ form_errors(form.firstname) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            {{ form_label(form.lastname) }}
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                </div>
+                                {{ form_widget(form.lastname , {'attr':{'class':''}}) }}
+                            </div>
+                            <small>{{ form_help(form.lastname) }}</small>
+
+                            <div class="form-error">
+                                {{ form_errors(form.lastname) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            {{ form_label(form.emailAddress) }}
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                </div>
+                                {{ form_widget(form.emailAddress , {'attr':{'class':''}}) }}
+                            </div>
+                            <small>{{ form_help(form.emailAddress) }}</small>
+
+                            <div class="form-error">
+                                {{ form_errors(form.emailAddress) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            {{ form_label(form.phoneNumber) }}
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                </div>
+                                {{ form_widget(form.phoneNumber , {'attr':{'class':''}}) }}
+                            </div>
+                            <small>{{ form_help(form.phoneNumber) }}</small>
+
+                            <div class="form-error">
+                                {{ form_errors(form.phoneNumber) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            {{ form_label(form.UUID) }}
+                            <div class="input-group mb-3">
+                                {{ form_widget(form.UUID , {'attr':{'class':''}}) }}
+                            </div>
+                            <small>{{ form_help(form.UUID) }}</small>
+
+                            <div class="form-error">
+                                {{ form_errors(form.UUID) }}
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            {{ form_label(form.Location) }}
+                            <div class="input-group mb-3">
+                                {{ form_widget(form.Location , {'attr':{'class':''}}) }}
+                            </div>
+                            <small>{{ form_help(form.Location) }}</small>
+
+                            <div class="form-error">
+                                {{ form_errors(form.Location) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row text-center">
+                        <div class="col-md">
+                            <button class="btn btn-primary btn-xs"><i class="fa fa-save"></i></button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+
+
+</script>
 {{ form_end(form) }}
+{% block customScripts %}
+    {{ encore_entry_script_tags('customForm') }}
+{% endblock %}

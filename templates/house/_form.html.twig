@@ -1,326 +1,273 @@
 {{ form_start(form) }}
 
 <div class="card-body">
-    <div class="row">
-        <div class="col-md-7">
-            <div class="card shadow mb-4">
-                <div class="card-body">
-                    <div class="card-header text-center bg-transparent">
-                        <h6>Basic Information</h6>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-10 form-group">
-                            {{ form_label(form.title) }}
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                </div>
-                                {{ form_widget(form.title , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.title) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.title) }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            {{ form_label(form.reference) }}
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                </div>
-                                {{ form_widget(form.reference , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.reference) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.reference) }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            {{ form_label(form.price) }}
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                </div>
-                                {{ form_widget(form.price , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.price) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.price) }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6 form-group">
-                            {{ form_label(form.HouseType) }}
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                </div>
-                                {{ form_widget(form.HouseType , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.HouseType) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.HouseType) }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            {{ form_label(form.description) }}
-                            <div class="input-group mb-3">
-                                {{ form_widget(form.description , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.description) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.description) }}
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-5">
-            <div class="card shadow mb-4">
-                <div class="card-body">
-                    <div class="card-header text-center bg-transparent ">
-                        <h6>Complementary Information</h6>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md form-group mt-3">
-                            <div class="container">
-                                <div class="wrapper">
-                                    <div class="image">
-                                        {#<img src="{{ asset('uploads/files/banner33-2x-5eefd48b92b98692081692.jpg') }}"#}
-                                             {#alt="">#}
-                                    </div>
-
-                                    <div class="content">
-                                        <div class="icon">
-                                            <i class="fas fa-cloud-upload-alt"></i>
-                                        </div>
-                                        <div class="text">
-                                            No file chosen
-                                        </div>
-                                    </div>
-                                    <div id="cancel-btn"><i class="fas fa-times"></i></div>
-                                    <div class="file-name">File name here</div>
-                                </div>
-                                <input id="default-btn" type="file" hidden>
-                                <button type="button" onclick = "defaultBtnActive()" id="custom-btn">Choose a file</button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-8 form-group">
-                            {{ form_label(form.pictureFile) }}
-                            <div class="input-group mb-3">
-                                {{ form_widget(form.pictureFile , {'attr':{'class':'card-img'}}) }}
-                            </div>
-                            <small>{{ form_help(form.pictureFile) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.pictureFile) }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            {{ form_label(form.area) }}
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                </div>
-                                {{ form_widget(form.area , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.area) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.area) }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            {{ form_label(form.numberOfRoom) }}
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                </div>
-                                {{ form_widget(form.numberOfRoom , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.numberOfRoom) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.numberOfRoom) }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            {{ form_label(form.numberOfBedRoom) }}
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                </div>
-                                {{ form_widget(form.numberOfBedRoom , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.numberOfBedRoom) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.numberOfBedRoom) }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            {{ form_label(form.numberOfKitchenRoom) }}
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                </div>
-                                {{ form_widget(form.numberOfKitchenRoom , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.numberOfKitchenRoom) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.numberOfKitchenRoom) }}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 form-group">
-                            {{ form_label(form.numberOfLivingRoom) }}
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                                </div>
-                                {{ form_widget(form.numberOfLivingRoom , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.numberOfLivingRoom) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.numberOfLivingRoom) }}
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="row">
         <div class="col-md-12">
             <div class="card shadow mb-4">
                 <div class="card-body">
-                    <div class="card-header text-center bg-transparent">
-                        <h6>OTHER INFORMATION</h6>
+                    <div class="card-header text-left bg-transparent">
+                        <h6>HOUSE UPDATE FORM</h6>
                     </div>
-                    <div class="row">
-                        <div class="col-md-7 form-group">
-                            {{ form_label(form.entranceCondition) }}
-                            <div class="input-group mb-3">
-                                {{ form_widget(form.entranceCondition , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.entranceCondition) }}</small>
+                    <nav class="bg-gray-200">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active rounded-0" id="pills-home-tab" data-toggle="pill"
+                                   href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i
+                                            class="fa fa-info-circle"></i> &nbsp; &nbsp; Basic infomation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-black-50 rounded-0" id="pills-profile-tab" data-toggle="pill"
+                                   href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><i
+                                            class="fa fa-image"></i> &nbsp; &nbsp; Media Galerie </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-black-50 rounded-0" id="pills-contact-tab" data-toggle="pill"
+                                   href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i
+                                            class="fa fa-check-circle"></i> &nbsp; &nbsp; Done</a>
+                            </li>
+                        </ul>
+                    </nav>
 
-                            <div class="form-error">
-                                {{ form_errors(form.entranceCondition) }}
-                            </div>
-                        </div>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                             aria-labelledby="pills-home-tab">
 
-                        <div class="col-md-5 form-group">
-                            {{ form_label(form.Location) }}
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                            <div class="row form-group m-2">
+                                <div class="col-md-2 justify-content-center">
+                                    {{ form_label(form.title) }}
                                 </div>
-                                {{ form_widget(form.Location , {'attr':{'class':''}}) }}
-                            </div>
-                            <small>{{ form_help(form.Location) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.Location) }}
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-5 form-group">
-                                    {{ form_label(form.promote) }}
-                                    <div class="input-group mb-3">
-                                        {{ form_widget(form.promote ,  {'attr':{'class':'house_promote'}}) }}
+                                <div class="col-md-10">
+                                    {{ form_widget(form.title , {'attr':{'class':''}}) }}
+                                    <small>{{ form_help(form.title) }}</small>
+                                    <div class="form-error">
+                                        {{ form_errors(form.title) }}
                                     </div>
-                                    <small>{{ form_help(form.promote) }}</small>
+                                </div>
+                            </div>
 
+
+
+                            <div class="row form-group m-2">
+                                <div class="col-md-2 justify-content-center">
+                                    {{ form_label(form.reference) }}
+                                </div>
+                                <div class="col-md-10">
+                                    {{ form_widget(form.reference , {'attr':{'class':''}}) }}
+                                    <small>{{ form_help(form.reference) }}</small>
+                                    <div class="form-error">
+                                        {{ form_errors(form.reference) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group m-2">
+                                <div class="col-md-2 justify-content-center">
+                                    {{ form_label(form.area) }}
+                                </div>
+                                <div class="col-md-10">
+                                    {{ form_widget(form.area , {'attr':{'class':''}}) }}
+                                    <small>{{ form_help(form.area) }}</small>
+                                    <div class="form-error">
+                                        {{ form_errors(form.area) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group m-2">
+                                <div class="col-md-2 justify-content-center">
+                                    {{ form_label(form.price) }}
+                                </div>
+                                <div class="col-md-10">
+                                    {{ form_widget(form.price , {'attr':{'class':''}}) }}
+                                    <small>{{ form_help(form.price) }}</small>
+                                    <div class="form-error">
+                                        {{ form_errors(form.price) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group m-2">
+                                <div class="col-md-2 justify-content-center">
+                                    {{ form_label(form.promote) }}
+                                </div>
+                                <div class="col-md-10">
+                                    {{ form_widget(form.promote , {'attr':{'class':''}}) }}
+                                    <small>{{ form_help(form.promote) }}</small>
                                     <div class="form-error">
                                         {{ form_errors(form.promote) }}
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row form-group m-2">
+                                <div class="col-md-2 justify-content-center">
+                                    {{ form_label(form.HouseType) }}
+                                </div>
+                                <div class="col-md-10">
+                                    {{ form_widget(form.HouseType , {'attr':{'class':''}}) }}
+                                    <small>{{ form_help(form.HouseType) }}</small>
+                                    <div class="form-error">
+                                        {{ form_errors(form.HouseType) }}
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row m-2 mt-4">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-3 form-group justify-content-center">
+                                            {{ form_label(form.numberOfRoom) }}
+                                            {{ form_widget(form.numberOfRoom , {'attr':{'class':''}}) }}
+                                            <small>{{ form_help(form.numberOfRoom) }}</small>
+                                            <div class="form-error">
+                                                {{ form_errors(form.numberOfRoom) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 form-group justify-content-center">
+                                            {{ form_label(form.numberOfBedRoom) }}
+                                            {{ form_widget(form.numberOfBedRoom , {'attr':{'class':''}}) }}
+                                            <small>{{ form_help(form.numberOfBedRoom) }}</small>
+                                            <div class="form-error">
+                                                {{ form_errors(form.numberOfBedRoom) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 form-group justify-content-center">
+                                            {{ form_label(form.numberOfKitchenRoom) }}
+                                            {{ form_widget(form.numberOfKitchenRoom , {'attr':{'class':''}}) }}
+                                            <small>{{ form_help(form.numberOfKitchenRoom) }}</small>
+                                            <div class="form-error">
+                                                {{ form_errors(form.numberOfBedRoom) }}
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 form-group justify-content-center">
+                                            {{ form_label(form.numberOfLivingRoom) }}
+                                            {{ form_widget(form.numberOfLivingRoom , {'attr':{'class':''}}) }}
+                                            <small>{{ form_help(form.numberOfLivingRoom) }}</small>
+                                            <div class="form-error">
+                                                {{ form_errors(form.numberOfLivingRoom) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group m-2">
+                                <div class="col-md-2 justify-content-center">
+                                    {{ form_label(form.Location) }}
+                                </div>
+                                <div class="col-md-10">
+                                    {{ form_widget(form.Location , {'attr':{'class':''}}) }}
+                                    <small>{{ form_help(form.Location) }}</small>
+                                    <div class="form-error">
+                                        {{ form_errors(form.Location) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group m-2">
+                                <div class="col-md-2 justify-content-center">
+                                    {{ form_label(form.description) }}
+                                </div>
+                                <div class="col-md-10">
+                                    {{ form_widget(form.description , {'attr':{'class':''}}) }}
+                                    <small>{{ form_help(form.description) }}</small>
+                                    <div class="form-error">
+                                        {{ form_errors(form.description) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group m-2">
+                                <div class="col-md-2 justify-content-center">
+                                    {{ form_label(form.entranceCondition) }}
+                                </div>
+                                <div class="col-md-10">
+                                    {{ form_widget(form.entranceCondition , {'attr':{'class':''}}) }}
+                                    <small>{{ form_help(form.entranceCondition) }}</small>
+                                    <div class="form-error">
+                                        {{ form_errors(form.entranceCondition) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel"
+                             aria-labelledby="pills-profile-tab">
+
+                            <div class="row form-group">
+                                <div class="col-lg">
+                                    {{ form_label((form.pictureFile)) }}
+
+                                    {{ form_widget(form.pictureFile) }}
+
+                                    <small>{{ form_help(form.entranceCondition) }}</small>
+                                    <div class="form-error">
+                                        {{ form_errors(form.entranceCondition) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="card shadow mb-4">
+                                        <div class="card-body">
+                                            <div class="card-header text-center bg-transparent">
+                                                <h6>GALERIE</h6>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-5 form-group">
+                                                    {{ form_label(form.Attachments) }}
+                                                    <div class="input-group mb-3">
+                                                        <ul style="list-style:none;" class="image"
+                                                            data-prototype="{{ form_widget(form.Attachments.vars.prototype)|e('html_attr') }}">
+                                                            {% for attachment in form.Attachments %}
+                                                                <li>{{ form_row(attachment.imageFile) }}</li>
+                                                            {% endfor %}
+                                                        </ul>
+                                                    </div>
+                                                    <small>{{ form_help(form.Attachments) }}</small>
+
+                                                    <div class="form-error">
+                                                        {{ form_errors(form.Attachments) }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="pills-contact" role="tabpanel"
+                             aria-labelledby="pills-contact-tab">
+
+                            <div class="row">
+                                <div class="col-md text-center">
+                                    <p>Si vous n'avez pas plus à ajouter veuillez cliquez sur le bouton Save en dessous</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md text-center">
+                                    <button class="btn btn-primary btn-xs"><i class="fa fa-save"></i></button>
+
+                                </div>
+                            </div>
+
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
+
     </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="card shadow mb-4">
-                <div class="card-body">
-                    <div class="card-header text-center bg-transparent">
-                        <h6>GALERIE</h6>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-5 form-group">
-                            {{ form_label(form.Attachments) }}
-                            <div class="input-group mb-3">
-                                <ul style="list-style:none;" class="image"
-                                    data-prototype="{{ form_widget(form.Attachments.vars.prototype)|e('html_attr') }}">
-                                    {% for attachment in form.Attachments %}
-                                        <li>{{ form_row(attachment.imageFile) }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </div>
-                            <small>{{ form_help(form.Attachments) }}</small>
-
-                            <div class="form-error">
-                                {{ form_errors(form.Attachments) }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md">
-            <button class="btn btn-primary btn-xs"><i class="fa fa-save"></i></button>
-
-        </div>
-    </div>
 </div>
 
 <script>

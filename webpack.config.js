@@ -26,8 +26,14 @@ Encore
         {from: './node_modules/ckeditor/skins', to: 'ckeditor/skins/[path][name].[ext]'}
     ])
     .autoProvidejQuery()
-    .autoProvideVariables({ Popper: ['popper.js' , 'default'] ,$:'jquery' , jQuery:'jquery',
-        'window.jQuery':'jquery'})
+    .autoProvideVariables(
+        { Popper:
+                ['popper.js' , 'default'] ,
+            $:'jquery' ,
+            jQuery:'jquery',
+        'window.jQuery':'jquery',
+            'window.$':'jquery'
+        })
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
 

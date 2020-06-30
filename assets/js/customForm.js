@@ -6,7 +6,7 @@ var $newLinkLi = jQuery('<li></li>').append($addImageButton);
 
 
 jQuery(document).ready(function () {
-    jQuery(function () {
+/*    jQuery(function () {
         jQuery('.house_promote').bootstrapToggle({
             on: 'Promoted',
             off: 'Not Promoted',
@@ -14,7 +14,7 @@ jQuery(document).ready(function () {
             width: 150,
             height: 40
         });
-    });
+    });*/
 
 
     $collectionHolder = $('ul.image');
