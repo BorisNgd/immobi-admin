@@ -24,6 +24,7 @@ class HouseController extends AbstractController
     {
         return $this->render('house/index.html.twig', [
             'houses' => $houseRepository->findAll(),
+            'current_menu' => 'house'
         ]);
     }
 
@@ -31,6 +32,7 @@ class HouseController extends AbstractController
      * @Route("/new", name="house_new", methods={"GET","POST"})
      * @param Request $request
      * @return Response
+     * @throws \Exception
      */
     public function new(Request $request): Response
     {
@@ -45,6 +47,38 @@ class HouseController extends AbstractController
                 $attachments->set($key , $attachment);
             }
 
+            $data = $form->getData();
+            $value = $data->getHouseType()->getName();
+
+
+            switch ($value){
+                case 'Appartements':
+                    $random = random_int(4, 8);
+                    $house->setReference("APP".$random);
+                    break;
+                case 'Chambres' :
+                    $random = random_int( 4,8);
+                    $house->setReference("CHA".$random);
+                    break;
+                case 'Studio':
+                    $random = random_int(4, 8);
+                    $house->setReference("STU".$random);
+                    break;
+                case 'Maisons':
+                    $random = random_int(4, 8);
+                    $house->setReference("MAI".$random);
+                    break;
+                case 'Villa':
+                    $random = random_int(4, 8);
+                    $house->setReference("VILLA".$random);
+                    break;
+                default:
+                    $random = random_int(4, 8);
+                    $house->setReference($random);
+                    break;
+            }
+
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($house);
             $entityManager->flush();
@@ -55,6 +89,7 @@ class HouseController extends AbstractController
         return $this->render('house/new.html.twig', [
             'house' => $house,
             'form' => $form->createView(),
+            'current_menu' => 'house'
         ]);
     }
 
@@ -91,7 +126,6 @@ class HouseController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($house);
             $entityManager->flush();
-/*            $this->getDoctrine()->getManager()->flush();*/
 
             return $this->redirectToRoute('house_index' , [
                 'id' =>$house->getId(),

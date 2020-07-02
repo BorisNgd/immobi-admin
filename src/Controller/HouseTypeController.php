@@ -24,6 +24,7 @@ class HouseTypeController extends AbstractController
     {
         return $this->render('house_type/index.html.twig', [
             'house_types' => $houseTypeRepository->findAll(),
+            'current_menu' => 'house_type'
         ]);
     }
 
@@ -49,6 +50,7 @@ class HouseTypeController extends AbstractController
         return $this->render('house_type/new.html.twig', [
             'house_type' => $houseType,
             'form' => $form->createView(),
+            'current_menu' => 'house_type'
         ]);
     }
 

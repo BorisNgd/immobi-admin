@@ -23,6 +23,7 @@ class UserController extends AbstractController
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->passwordEncoder = $passwordEncoder;
+
     }
 
     /**
@@ -34,6 +35,7 @@ class UserController extends AbstractController
     {
         return $this->render('user/index.html.twig', [
             'users' => $userRepository->findAll(),
+            'current_menu' => 'user',
         ]);
     }
 
@@ -76,6 +78,7 @@ class UserController extends AbstractController
         return $this->render('user/new.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
+            'current_menu' => 'user',
         ]);
     }
 

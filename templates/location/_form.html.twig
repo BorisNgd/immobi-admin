@@ -1,4 +1,97 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
+
+<div class="card-body">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <div class="card-header text-left bg-transparent">
+                        <h6>LOCATION UPDATE FORM</h6>
+                    </div>
+
+                    <div class="row form-group m-2">
+                        <div class="col-md-2 justify-content-center">
+                            {{ form_label(form.state) }}
+                        </div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.state , {'attr':{'class':''}}) }}
+                            <small>{{ form_help(form.state) }}</small>
+                            <div class="form-error">
+                                {{ form_errors(form.state) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row form-group m-2">
+                        <div class="col-md-2 justify-content-center">
+                            {{ form_label(form.city) }}
+                        </div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.city , {'attr':{'class':''}}) }}
+                            <small>{{ form_help(form.city) }}</small>
+                            <div class="form-error">
+                                {{ form_errors(form.city) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row form-group m-2">
+                        <div class="col-md-2 justify-content-center">
+                            {{ form_label(form.street) }}
+                        </div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.street , {'attr':{'class':''}}) }}
+                            <small>{{ form_help(form.street) }}</small>
+                            <div class="form-error">
+                                {{ form_errors(form.street) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row form-group m-2">
+                        <div class="col-md-2 justify-content-center">
+                            {{ form_label(form.longitude) }}
+                        </div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.longitude , {'attr':{'class':''}}) }}
+                            <small>{{ form_help(form.longitude) }}</small>
+                            <div class="form-error">
+                                {{ form_errors(form.longitude) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row form-group m-2">
+                        <div class="col-md-2 justify-content-center">
+                            {{ form_label(form.latitude) }}
+                        </div>
+                        <div class="col-md-10">
+                            {{ form_widget(form.latitude , {'attr':{'class':''}}) }}
+                            <small>{{ form_help(form.latitude) }}</small>
+                            <div class="form-error">
+                                {{ form_errors(form.latitude) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="row">
+                                <div class="col-md text-center">
+                                    <button class="btn btn-primary btn-xs"><i class="fa fa-save"></i>{{ button_label|default('Save') }}</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
 {{ form_end(form) }}

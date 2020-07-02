@@ -54,6 +54,11 @@ class Customer
      */
     private $Bookings;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Notification::class, inversedBy="customers")
+     */
+    private $notification;
+
     public function __construct()
     {
         $this->Bookings = new ArrayCollection();
@@ -163,6 +168,23 @@ class Customer
                 $booking->setCustomer(null);
             }
         }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+       return $this->getFirstname()." ".$this->getLastname();
+    }
+
+    public function getNotification(): ?Notification
+    {
+        return $this->notification;
+    }
+
+    public function setNotification(?Notification $notification): self
+    {
+        $this->notification = $notification;
 
         return $this;
     }

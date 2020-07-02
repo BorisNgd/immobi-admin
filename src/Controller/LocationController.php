@@ -24,6 +24,7 @@ class LocationController extends AbstractController
     {
         return $this->render('location/index.html.twig', [
             'locations' => $locationRepository->findAll(),
+            'current_menu' => 'location'
         ]);
     }
 

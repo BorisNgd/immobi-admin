@@ -11,27 +11,23 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Vich\UploaderBundle\Entity\File;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('photo' , FileType::class , [
+            ->add('photoFile' , VichImageType::class , [
                 'label' => 'Choose picture',
-                'mapped' => false,
+                'mapped' => true ,
                 'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '1024k',
-                        'mimeTypes' => [
-                            'application/pdf',
-                            'application/x-pdf'
-                        ],
-                        'mimeTypeMessage' => 'Please upload a valid PDF Document'
-                    ])
+                'by_reference' => false,
+                'attr' => [
+                    'class' => ''
                 ],
             ])
+            ->add('photo')
             ->add('email')
             ->add('roles' , ChoiceType::class , [
                 'choices' => [

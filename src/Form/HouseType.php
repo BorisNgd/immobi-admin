@@ -24,7 +24,7 @@ class HouseType extends AbstractType
             ->add('price')
             ->add('pictureFile' , VichImageType::class, [
                 'label' => 'Please upload a file',
-                'required' => 'false',
+                'required' => false,
                 'mapped' => true,
                 'by_reference' => false,
                 'attr' => [

@@ -140,6 +140,10 @@ class House
         $this->numberOfLivingRoom = 0;
         $this->visitorCount = 0;
         $this->status = 0;
+        try {
+            $this->reference = random_int(1, 400);
+        } catch (\Exception $e) {
+        }
         $this->createdAt = new \DateTime('now');
         $this->updatedAt = new \DateTime('now');
         $this->Attachments = new ArrayCollection();
@@ -449,5 +453,9 @@ class House
         }
     }
 
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 
 }

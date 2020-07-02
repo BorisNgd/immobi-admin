@@ -22,6 +22,7 @@ class CustomerController extends AbstractController
     {
         return $this->render('customer/index.html.twig', [
             'customers' => $customerRepository->findAll(),
+            'current_menu' => 'customer'
         ]);
     }
 
@@ -45,6 +46,7 @@ class CustomerController extends AbstractController
         return $this->render('customer/new.html.twig', [
             'customer' => $customer,
             'form' => $form->createView(),
+            'current_menu' => 'customer'
         ]);
     }
 
